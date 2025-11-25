@@ -22,14 +22,14 @@ namespace pizza
         }
 		private void BtnOsszegzes_Click(object sender, RoutedEventArgs e)
 		{
-			
+
 			var teszta = (lbTeszta.SelectedItem as ListBoxItem)?.Content.ToString()
 						 ?? "nincs kiválasztva";
 
 			var meret = (cbMeret.SelectedItem as ComboBoxItem)?.Content.ToString()
 						?? "nincs kiválasztva";
 
-	
+
 			List<string> feltetek = new List<string>();
 
 			if (chkSajt.IsChecked == true) feltetek.Add("sajt");
@@ -40,8 +40,19 @@ namespace pizza
 
 			string feltetSzoveg = feltetek.Count > 0 ? string.Join(", ", feltetek) : "nincs feltét";
 
+			string atvetel = "nincs kiválasztva";
+			if (rbHazhoz.IsChecked == true) atvetel = "házhozszállítás";
+			if (rbSzemelyes.IsChecked == true) atvetel = "személyes átvétel";
+
+
+			txtEredmeny.Text =
+				$"Tészta alap: {teszta}\n" +
+				$"Pizza méret: {meret}\n" +
+				$"Feltétek: {feltetSzoveg}\n" +
+				$"Átvételi mód: {atvetel}";
 
 
 
+		}
 		}
 	}
