@@ -16,7 +16,49 @@
 			<RowDefinition Height="*"/>
 		</Grid.RowDefinitions>
 		
-		
-		
+		<GroupBox Header="Tészta alap" Margin="5">
+			<ListBox x:Name="lbTeszta" Height="80">
+				<ListBoxItem>Vékony</ListBoxItem>
+				<ListBoxItem>Normál</ListBoxItem>
+				<ListBoxItem>Extra vastag</ListBoxItem>
+			</ListBox>
+		</GroupBox>
+
+		<GroupBox Header="Pizza méret" Margin="5" Grid.Row="1">
+			<ComboBox x:Name="cbMeret" Width="150">
+				<ComboBoxItem>Kicsi</ComboBoxItem>
+				<ComboBoxItem>Közepes</ComboBoxItem>
+				<ComboBoxItem>Nagy</ComboBoxItem>
+			</ComboBox>
+		</GroupBox>
+
+	
+		<GroupBox Header="Feltétek" Margin="5" Grid.Row="2">
+			<StackPanel>
+				<CheckBox x:Name="chkSajt" Content="Sajt"/>
+				<CheckBox x:Name="chkSonka" Content="Sonka"/>
+				<CheckBox x:Name="chkGomba" Content="Gomba"/>
+				<CheckBox x:Name="chkOliva" Content="Olívabogyó"/>
+				<CheckBox x:Name="chkKukorica" Content="Kukorica"/>
+			</StackPanel>
+		</GroupBox>
+
+	
+		<GroupBox Header="Átvételi mód" Margin="5" Grid.Row="3">
+			<StackPanel>
+				<RadioButton x:Name="rbHazhoz" GroupName="atvetel" Content="Házhozszállítás"/>
+				<RadioButton x:Name="rbSzemelyes" GroupName="atvetel" Content="Személyes átvétel"/>
+			</StackPanel>
+		</GroupBox>
+
+	
+		<StackPanel Grid.Row="4" Margin="5">
+			<Button Content="Rendelés összegzése" Width="200" Height="40" Click="BtnOsszegzes_Click"/>
+			<TextBlock x:Name="txtEredmeny" Margin="5" TextWrapping="Wrap"/>
+		</StackPanel>
+
 	</Grid>
 </Window>
+
+
+
