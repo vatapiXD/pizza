@@ -20,5 +20,13 @@ namespace pizza
         {
             InitializeComponent();
         }
-    }
-}
+		private void BtnOsszegzes_Click(object sender, RoutedEventArgs e)
+		{
+			
+			var teszta = (lbTeszta.SelectedItem as ListBoxItem)?.Content.ToString()
+						 ?? "nincs kiválasztva";
+
+
+
+		}
+	}
