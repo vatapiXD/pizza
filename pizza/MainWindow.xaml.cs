@@ -26,6 +26,21 @@ namespace pizza
 			var teszta = (lbTeszta.SelectedItem as ListBoxItem)?.Content.ToString()
 						 ?? "nincs kiválasztva";
 
+			var meret = (cbMeret.SelectedItem as ComboBoxItem)?.Content.ToString()
+						?? "nincs kiválasztva";
+
+	
+			List<string> feltetek = new List<string>();
+
+			if (chkSajt.IsChecked == true) feltetek.Add("sajt");
+			if (chkSonka.IsChecked == true) feltetek.Add("sonka");
+			if (chkGomba.IsChecked == true) feltetek.Add("gomba");
+			if (chkOliva.IsChecked == true) feltetek.Add("olívabogyó");
+			if (chkKukorica.IsChecked == true) feltetek.Add("kukorica");
+
+			string feltetSzoveg = feltetek.Count > 0 ? string.Join(", ", feltetek) : "nincs feltét";
+
+
 
 
 		}
